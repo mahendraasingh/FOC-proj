@@ -1,0 +1,11 @@
+venv/
+__pycache__/
+*.pyc
+
+logs/security_events.json
+logs/*.pcap
+logs/*.txt
+
+src/models/saved/*.pkl
+
+.DS_Store

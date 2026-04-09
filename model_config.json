@@ -1,0 +1,5 @@
+{
+  "supervised_model_path": "src/models/saved/supervised_model.pkl",
+  "unsupervised_model_path": "src/models/saved/unsupervised_model.pkl",
+  "scaler_path": "src/models/saved/scaler.pkl"
+}

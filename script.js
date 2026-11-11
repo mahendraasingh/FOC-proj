@@ -449,3 +449,71 @@ function selectBrainStage(index) {
     card.style.borderColor = data.color;
   }
   if (nameEl) {
+    nameEl.innerText = data.name;
+    nameEl.style.color = data.color;
+  }
+  if (badgeEl) {
+    badgeEl.innerText = data.badge;
+    badgeEl.style.borderColor = data.color;
+    badgeEl.style.color = data.color;
+  }
+  if (mascotImg) {
+    mascotImg.src = data.img;
+    mascotImg.style.transform = "scale(0.92)";
+    setTimeout(() => {
+      mascotImg.style.transform = "scale(1)";
+    }, 150);
+  }
+  if (cognitiveEl) cognitiveEl.innerText = data.cognitiveState;
+  if (symptomsEl) symptomsEl.innerText = data.symptoms;
+  if (overlayEl) overlayEl.innerText = data.overlayBehavior;
+
+  if (memBar && memVal) {
+    memBar.style.width = `${data.memoryCapacity}%`;
+    memBar.style.background = data.color;
+    memVal.innerText = `${data.memoryCapacity}%`;
+  }
+  if (focBar && focVal) {
+    focBar.style.width = `${data.focusRetention}%`;
+    focBar.style.background = data.color;
+    focVal.innerText = `${data.focusRetention}%`;
+  }
+  if (exeBar && exeVal) {
+    exeBar.style.width = `${data.executiveControl}%`;
+    exeBar.style.background = data.color;
+    exeVal.innerText = `${data.executiveControl}%`;
+  }
+
+  // Update scrubber slider position
+  const slider = document.getElementById("stages-scrubber");
+  const valChip = document.getElementById("stages-scrubber-val");
+  if (slider && valChip) {
+    let targetVal = 15;
+    if (index === 1) targetVal = 45;
+    if (index === 2) targetVal = 75;
+    if (index === 3) targetVal = 110;
+    slider.value = targetVal;
+    valChip.innerText = `${targetVal} REELS`;
+    valChip.style.borderColor = data.color;
+    valChip.style.color = data.color;
+  }
+}
+
+function onScrubberChange(val) {
+  const count = parseInt(val, 10);
+  const valChip = document.getElementById("stages-scrubber-val");
+  if (valChip) {
+    valChip.innerText = `${count} REELS`;
+  }
+
+  let stageIndex = 0;
+  if (count < 30) stageIndex = 0;
+  else if (count < 60) stageIndex = 1;
+  else if (count < 90) stageIndex = 2;
+  else stageIndex = 3;
+
+  selectBrainStage(stageIndex);
+}
+
+// ==========================================
+// 4. DOPAMINE LIFETIME CALCULATOR

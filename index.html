@@ -259,5 +259,143 @@
   </section>
 
   <!-- ==========================================================================
+       4. CORE FEATURES GRID (BENTO BOX STYLE)
+       ========================================================================== -->
+  <section class="features-section" id="features">
+    <div class="section-header">
+      <div class="section-badge">
+        <span class="mono-chip pill-blue">ENGINEERED FOR WILLPOWER</span>
+      </div>
+      <h2 class="section-title">Everything You Need to Break Free</h2>
+      <p class="section-desc">
+        RotBrain is not another boring timer app that you silently swipe away. It combines system-level accessibility automation with undeniable behavioral feedback.
+      </p>
+    </div>
+
+    <div class="bento-grid">
+      <!-- Bento 1: Large 2-Col Floating Mascot Overlay -->
+      <div class="brutalist-card bento-card bento-card-lg">
+        <div>
+          <div class="bento-badge-row">
+            <div class="bento-icon-box">🧠</div>
+            <span class="mono-chip pill-blue">[SYSTEM_ALERT_OVERLAY]</span>
+          </div>
+          <h3 class="bento-title">Real-Time Floating Mascot</h3>
+          <p class="bento-desc">
+            An unobtrusive yet undeniable floating brain bubble that stays pinned over Instagram Reels, YouTube Shorts, and TikTok. As you swipe through videos, the mascot visually rots right before your eyes.
+          </p>
+        </div>
+        
+        <div class="bento-visual-box">
+          <div class="overlay-preview-container">
+            <div style="display: flex; align-items: center; gap: 1rem; background: rgba(255,255,255,0.08); border: 2px dashed #3546F5; border-radius: 9999px; padding: 0.6rem 1.4rem;">
+              <img src="images/freshBrain.png" alt="Brain Icon" width="38" height="38" style="border-radius: 50%; border: 1.5px solid #111111;">
+              <div style="font-family: monospace; font-size: 0.9rem; color: #FFFFFF;">
+                <span style="color: #38BDF8; font-weight: bold;">[OVERLAY ACTIVE]</span> 
+                <span>38 Videos Scrolled Today</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bento 2: Automated Accessibility Detection Engine -->
+      <div class="brutalist-card bento-card">
+        <div>
+          <div class="bento-badge-row">
+            <div class="bento-icon-box">⚡</div>
+            <span class="mono-chip pill-dark">[ZERO_LOGGING]</span>
+          </div>
+          <h3 class="bento-title">Automatic Detection</h3>
+          <p class="bento-desc">
+            Zero manual logging required. RotBrain's native Kotlin Android Accessibility engine automatically detects when a reel or short begins and scrolls.
+          </p>
+        </div>
+        <div class="privacy-terminal" style="font-size: 0.75rem; padding: 0.8rem;">
+          <div class="term-green">✓ Package: com.instagram.android</div>
+          <div class="term-dim">→ TYPE_VIEW_SCROLLED event</div>
+          <div class="term-amber">→ Video duration: 24s [COUNT +1]</div>
+          <div class="term-green">✓ CPU Usage: &lt;0.02%</div>
+        </div>
+      </div>
+
+      <!-- Bento 3: 24-Hour Activity Heatmap -->
+      <div class="brutalist-card bento-card bento-card-lg">
+        <div>
+          <div class="bento-badge-row">
+            <div class="bento-icon-box">📊</div>
+            <span class="mono-chip pill-blue">[ANALYTICS]</span>
+          </div>
+          <h3 class="bento-title">24-Hour Binge Heatmap</h3>
+          <p class="bento-desc">
+            Visual breakdown of your daily scroll spikes, peak binge hours, and dopamine capacity trends. Hover over any block to inspect historical scroll volume.
+          </p>
+        </div>
+
+        <div class="bento-visual-box">
+          <div style="display: flex; justify-content: space-between; font-family: monospace; font-size: 0.78rem; font-weight: 700; color: #4B5563;">
+            <span>12 AM</span>
+            <span>6 AM</span>
+            <span>12 PM</span>
+            <span>6 PM</span>
+            <span>11 PM</span>
+          </div>
+          <div class="heatmap-grid" id="heatmap-cells-container"></div>
+          <div id="heatmap-tooltip" style="font-family: monospace; font-size: 0.75rem; font-weight: bold; color: #1E40AF; text-align: center; margin-top: 0.4rem;">
+            Hover over any cell to inspect hourly dopamine impact
+          </div>
+        </div>
+      </div>
+
+      <!-- Bento 4: Custom Daily Quota & Guard Interception -->
+      <div class="brutalist-card bento-card">
+        <div>
+          <div class="bento-badge-row">
+            <div class="bento-icon-box">🛡️</div>
+            <span class="mono-chip pill-dark">[INTERCEPT]</span>
+          </div>
+          <h3 class="bento-title">Guard Interception</h3>
+          <p class="bento-desc">
+            Set hard boundaries (e.g. 50 videos max). When breached, RotBrain takes over the screen with an un-ignorable reality check modal.
+          </p>
+        </div>
+        <div style="background: #F3F4F6; border: 2px solid #111111; border-radius: 8px; padding: 1rem; text-align: center;">
+          <span style="font-family: monospace; font-size: 0.8rem; font-weight: bold; color: #DC2626;">QUOTA LIMIT: 50 VIDEOS</span>
+          <p style="font-size: 0.75rem; color: #4B5563; margin-top: 0.3rem;">Full-screen modal halts the dopamine loop dead in its tracks.</p>
+        </div>
+      </div>
+
+      <!-- Bento 5: 100% Privacy-First & On-Device -->
+      <div class="brutalist-card bento-card bento-card-full">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+          <div>
+            <div class="bento-badge-row">
+              <div class="bento-icon-box">🔒</div>
+              <span class="mono-chip pill-blue">[ZERO_TELEMETRY]</span>
+            </div>
+            <h3 class="bento-title">100% Privacy-First. Zero Cloud Servers.</h3>
+            <p class="bento-desc">
+              Your viewing habits and screen time are deeply personal. RotBrain has zero analytics trackers, zero cloud accounts, and requires NO internet permission. Everything is stored and computed locally on your phone using SQLite.
+            </p>
+            <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+              <span class="mono-chip pill-dark">✓ 0 KB Network Uploads</span>
+              <span class="mono-chip pill-dark">✓ Local SQLite Database</span>
+              <span class="mono-chip pill-dark">✓ Open Source MIT</span>
+            </div>
+          </div>
+
+          <div class="privacy-terminal">
+            <div class="term-dim">// RotBrain Local Database Verification</div>
+            <div class="term-green">SELECT count(*) FROM reel_sessions WHERE is_local = 1;</div>
+            <div>[RESULT]: 1,248 rows stored in /data/user/0/.../rotbrain.db</div>
+            <div class="term-amber">&gt;&gt; Network Sockets Opened: 0 (Permission NOT Granted)</div>
+            <div class="term-green">&gt;&gt; Data telemetry destination: NONE (Air-gapped)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
 </body>
 </html>

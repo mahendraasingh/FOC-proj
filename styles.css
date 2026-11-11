@@ -1064,3 +1064,137 @@ body {
 }
 
 /* ==========================================================================
+   CORE FEATURES GRID (BENTO BOX STYLE)
+   ========================================================================== */
+.features-section {
+  max-width: 1200px;
+  margin: 6rem auto;
+  padding: 0 1.5rem;
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+}
+
+.bento-card {
+  padding: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bento-card-lg {
+  grid-column: span 2;
+}
+
+.bento-card-full {
+  grid-column: span 3;
+}
+
+.bento-badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+
+.bento-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #FFFFFF;
+  border: 2px solid var(--color-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px 0px var(--color-dark);
+  font-size: 1.4rem;
+}
+
+.bento-title {
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: var(--color-dark);
+  margin-bottom: 0.6rem;
+  line-height: 1.2;
+}
+
+.bento-desc {
+  font-size: 1rem;
+  color: #4B5563;
+  line-height: 1.55;
+  margin-bottom: 1.5rem;
+}
+
+/* Bento Interactive Visuals */
+.bento-visual-box {
+  background: #F9FAFB;
+  border: 2px solid var(--color-dark);
+  border-radius: var(--radius-md);
+  padding: 1.2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Floating overlay interactive widget demo */
+.overlay-preview-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 160px;
+  background: #111827;
+  border-radius: 8px;
+  position: relative;
+  padding: 1rem;
+  border: 1.5px solid #374151;
+}
+
+/* Heatmap Grid Simulation */
+.heatmap-grid {
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  gap: 3px;
+  margin: 1rem 0 0.5rem;
+}
+
+.heatmap-cell {
+  height: 22px;
+  border-radius: 2px;
+  background: #E5E7EB;
+  border: 1px solid rgba(0,0,0,0.1);
+  transition: transform 0.15s ease, filter 0.15s ease;
+  cursor: pointer;
+}
+
+.heatmap-cell:hover {
+  transform: scale(1.3);
+  z-index: 10;
+  border-color: #111111;
+}
+
+.heat-level-0 { background: #F3F4F6; }
+.heat-level-1 { background: #93C5FD; }
+.heat-level-2 { background: #3B82F6; }
+.heat-level-3 { background: #F59E0B; }
+.heat-level-4 { background: #EF4444; }
+
+/* Privacy Terminal Block */
+.privacy-terminal {
+  background: #0F172A;
+  color: #38BDF8;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  padding: 1.2rem;
+  border-radius: 8px;
+  border: 2px solid var(--color-dark);
+  line-height: 1.6;
+}
+
+.term-green { color: #4ADE80; }
+.term-amber { color: #FBBF24; }
+.term-dim { color: #64748B; }
+
+/* ==========================================================================

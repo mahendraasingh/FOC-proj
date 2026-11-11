@@ -249,3 +249,108 @@ function scrollNextReel(increment = 1) {
   heroReelIndex++;
 
   // Subtle reel transition animation
+  const container = document.getElementById("reel-video-container");
+  if (container) {
+    container.style.transform = "translateY(-6px)";
+    setTimeout(() => {
+      container.style.transform = "translateY(0)";
+    }, 120);
+  }
+
+  updateHeroPhoneUI(true);
+}
+
+function resetBrainSimulator() {
+  sound.playPop();
+  heroVideoCount = 0;
+  heroReelIndex = 0;
+  if (autoBingeTimer) {
+    clearInterval(autoBingeTimer);
+    autoBingeTimer = null;
+    const bingeBtn = document.getElementById("auto-binge-btn");
+    if (bingeBtn) bingeBtn.innerHTML = "<span>⏩</span> Auto-Binge";
+  }
+  const guardModal = document.getElementById("hero-guard-modal");
+  if (guardModal) {
+    guardModal.classList.remove("active");
+    guardModal.classList.remove("dismissed");
+  }
+  updateHeroPhoneUI(false);
+}
+
+function toggleAutoBinge() {
+  const bingeBtn = document.getElementById("auto-binge-btn");
+  if (autoBingeTimer) {
+    clearInterval(autoBingeTimer);
+    autoBingeTimer = null;
+    sound.playPop();
+    if (bingeBtn) bingeBtn.innerHTML = "<span>⏩</span> Auto-Binge";
+  } else {
+    sound.playPop();
+    if (bingeBtn) bingeBtn.innerHTML = "<span>⏸️</span> Pause Binge";
+    autoBingeTimer = setInterval(() => {
+      scrollNextReel(5);
+      if (heroVideoCount >= 105) {
+        clearInterval(autoBingeTimer);
+        autoBingeTimer = null;
+        if (bingeBtn) bingeBtn.innerHTML = "<span>⏩</span> Auto-Binge";
+      }
+    }, 1200);
+  }
+}
+
+// Make floating brain draggable within the phone screen
+function initDraggableOverlay() {
+  const overlay = document.getElementById("hero-floating-overlay");
+  const screen = document.getElementById("phone-mockup-screen");
+  if (!overlay || !screen) return;
+
+  let isDragging = false;
+  let startX, startY, initialLeft, initialTop;
+
+  overlay.addEventListener("pointerdown", (e) => {
+    isDragging = true;
+    overlay.setPointerCapture(e.pointerId);
+    startX = e.clientX;
+    startY = e.clientY;
+
+    const rect = overlay.getBoundingClientRect();
+    const screenRect = screen.getBoundingClientRect();
+
+    initialLeft = rect.left - screenRect.left;
+    initialTop = rect.top - screenRect.top;
+    sound.playPop();
+  });
+
+  window.addEventListener("pointermove", (e) => {
+    if (!isDragging) return;
+    const dx = e.clientX - startX;
+    const dy = e.clientY - startY;
+
+    const screenRect = screen.getBoundingClientRect();
+    const overlayRect = overlay.getBoundingClientRect();
+
+    let newLeft = initialLeft + dx;
+    let newTop = initialTop + dy;
+
+    // Boundaries
+    const maxLeft = screenRect.width - overlayRect.width - 8;
+    const maxTop = screenRect.height - overlayRect.height - 8;
+
+    newLeft = Math.max(8, Math.min(newLeft, maxLeft));
+    newTop = Math.max(38, Math.min(newTop, maxTop));
+
+    overlay.style.left = `${newLeft}px`;
+    overlay.style.top = `${newTop}px`;
+    overlay.style.right = "auto";
+  });
+
+  window.addEventListener("pointerup", () => {
+    if (isDragging) {
+      isDragging = false;
+    }
+  });
+}
+
+// ==========================================
+// 3. INTERACTIVE 4-STAGE BRAIN DECAY SHOWCASE

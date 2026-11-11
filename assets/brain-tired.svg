@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Amber Aura -->
+  <circle cx="100" cy="100" r="92" fill="#F59E0B" fill-opacity="0.15" filter="blur(8px)"/>
+
+  <!-- Outer Tactile Outline -->
+  <g filter="drop-shadow(3px 4px 0px #111111)">
+    <!-- Main Brain Shape (Slightly sagging lobes) -->
+    <path d="M60 148 C38 148 26 130 28 110 C24 96 30 82 42 72 C40 52 58 37 78 42 C90 32 110 32 122 42 C142 37 160 52 158 72 C170 82 176 96 172 110 C174 130 162 148 140 148 C130 160 115 164 100 164 C85 164 70 160 60 148 Z" 
+          fill="#F59E0B" stroke="#111111" stroke-width="4.5" stroke-linejoin="round"/>
+    
+    <!-- Hemisphere divide -->
+    <path d="M100 44 C97 68 103 98 100 160" stroke="#B45309" stroke-width="4" stroke-linecap="round"/>
+    <path d="M100 44 C97 68 103 98 100 160" stroke="#111111" stroke-width="2.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+
+    <!-- Left Hemisphere Convolutions -->
+    <path d="M48 78 C54 74 66 76 66 86 C66 98 50 100 58 114 C63 122 76 120 78 130" 
+          stroke="#FBBF24" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M65 54 C72 62 80 60 82 72" 
+          stroke="#FDE68A" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+    <!-- Right Hemisphere Convolutions -->
+    <path d="M152 78 C146 74 134 76 134 86 C134 98 150 100 142 114 C137 122 124 120 122 130" 
+          stroke="#FBBF24" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M135 54 C128 62 120 60 118 72" 
+          stroke="#FDE68A" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+    <!-- Tired Half-Closed Eyes -->
+    <g class="eyes">
+      <!-- Left Eye -->
+      <ellipse cx="78" cy="104" rx="14" ry="14" fill="#FFFFFF" stroke="#111111" stroke-width="3.5"/>
+      <circle cx="80" cy="106" r="6" fill="#111111"/>
+      <circle cx="82" cy="104" r="2" fill="#FFFFFF"/>
+      <!-- Drooping Eyelid -->
+      <path d="M64 102 C70 108 86 108 92 102 L92 92 L64 92 Z" fill="#D97706" stroke="#111111" stroke-width="2.5"/>
+
+      <!-- Right Eye -->
+      <ellipse cx="122" cy="104" rx="14" ry="14" fill="#FFFFFF" stroke="#111111" stroke-width="3.5"/>
+      <circle cx="120" cy="106" r="6" fill="#111111"/>
+      <circle cx="118" cy="104" r="2" fill="#FFFFFF"/>
+      <!-- Drooping Eyelid -->
+      <path d="M108 102 C114 108 130 108 136 102 L136 92 L108 92 Z" fill="#D97706" stroke="#111111" stroke-width="2.5"/>
+    </g>
+
+    <!-- Sweat drop on temple -->
+    <path d="M158 84 C158 80 163 74 163 74 C163 74 168 80 168 84 C168 87 165.5 89 163 89 C160.5 89 158 87 158 84 Z" 
+          fill="#38BDF8" stroke="#111111" stroke-width="2"/>
+
+    <!-- Drowsy / Wavy Tired Mouth -->
+    <path d="M92 126 C96 122 104 122 108 126" stroke="#111111" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Sleepy Zzz -->
+    <g opacity="0.9">
+      <path d="M165 45 L173 45 L165 53 L173 53" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M174 32 L180 32 L174 38 L180 38" stroke="#FBBF24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <!-- Status pill -->
+  <rect x="52" y="172" width="96" height="20" rx="10" fill="#111111" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="100" y="186" text-anchor="middle" fill="#FBBF24" font-family="monospace" font-size="10" font-weight="bold" letter-spacing="1">TIRED // 45 REELS</text>
+</svg>
+

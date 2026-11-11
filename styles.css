@@ -1,0 +1,121 @@
+﻿/* ==========================================================================
+   ROTBRAIN LANDING PAGE - NEO-BRUTALIST STYLING
+   Aesthetic: Neo-brutalist tech meets tactile pixel-art & editorial elegance
+   ========================================================================== */
+
+:root {
+  /* Brand Core Colors */
+  --color-primary: #3546F5;
+  --color-primary-dark: #2435D9;
+  --color-primary-light: #5B6AF7;
+  --color-dark: #111111;
+  --color-dark-surface: #181A20;
+  --color-canvas: #F4F4F1;
+  --color-card-bg: #FFFFFF;
+  --color-border: #111111;
+  --color-muted: #6B7280;
+  
+  /* Brain State Colors */
+  --color-fresh: #3546F5;
+  --color-fresh-glow: rgba(53, 70, 245, 0.25);
+  --color-tired: #F59E0B;
+  --color-tired-glow: rgba(245, 158, 11, 0.25);
+  --color-very-tired: #F97316;
+  --color-very-tired-glow: rgba(249, 115, 22, 0.25);
+  --color-rotting: #EF4444;
+  --color-rotting-glow: rgba(239, 68, 68, 0.35);
+
+  /* Tactile Shadows */
+  --shadow-sm: 2px 2px 0px var(--color-dark);
+  --shadow-md: 4px 4px 0px var(--color-dark);
+  --shadow-lg: 6px 6px 0px var(--color-dark);
+  --shadow-xl: 8px 8px 0px var(--color-dark);
+  --shadow-primary: 4px 4px 0px var(--color-primary);
+  --shadow-primary-lg: 6px 6px 0px var(--color-primary);
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+  --radius-pill: 9999px;
+
+  /* Fonts */
+  --font-display: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+/* Base Resets */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-display);
+  background-color: var(--color-canvas);
+  color: var(--color-dark);
+  line-height: 1.5;
+  overflow-x: hidden;
+  position: relative;
+  background-image: 
+    radial-gradient(rgba(17, 17, 17, 0.08) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+/* Selection */
+::selection {
+  background: var(--color-primary);
+  color: #FFFFFF;
+}
+
+/* Typography Helpers */
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.tracking-tighter {
+  letter-spacing: -0.04em;
+}
+
+.tracking-tight {
+  letter-spacing: -0.02em;
+}
+
+/* Neo-Brutalist Utility Classes */
+.brutalist-card {
+  background: var(--color-card-bg);
+  border: 2.5px solid var(--color-dark);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.brutalist-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.brutalist-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2.5px solid var(--color-dark);
+  border-radius: var(--radius-pill);
+  padding: 0.85rem 1.75rem;
+  font-size: 1rem;
+  box-shadow: var(--shadow-md);
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}

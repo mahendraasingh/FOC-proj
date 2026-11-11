@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    ROTBRAIN LANDING PAGE - NEO-BRUTALIST STYLING
    Aesthetic: Neo-brutalist tech meets tactile pixel-art & editorial elegance
    ========================================================================== */
@@ -1955,3 +1955,81 @@ body {
 }
 
 /* ==========================================================================
+   RESPONSIVENESS (MOBILE / TABLET)
+   ========================================================================== */
+@media (max-width: 992px) {
+  .hero-section {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .hero-content {
+    align-items: center;
+  }
+
+  .hero-headline {
+    font-size: 2.8rem;
+  }
+
+  .hero-cta-group {
+    align-items: center;
+  }
+
+  .stages-selector-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stage-display-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bento-card-lg, .bento-card-full {
+    grid-column: span 1;
+  }
+
+  .guide-steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .calculator-card {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+
+  .specs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-headline {
+    font-size: 2.2rem;
+  }
+
+  .stages-selector-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .specs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-banner-title {
+    font-size: 2.4rem;
+  }
+
+  .phone-mockup-frame {
+    width: 290px;
+    height: 580px;
+  }
+}

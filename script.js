@@ -560,3 +560,53 @@ function updateDopamineCalc() {
 
 // ==========================================
 // 5. 24-HOUR INTERACTIVE HEATMAP
+// ==========================================
+function initHeatmap() {
+  const container = document.getElementById("heatmap-cells-container");
+  if (!container) return;
+
+  container.innerHTML = "";
+  // 7 days x 24 hours
+  const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+  days.forEach((day, dIdx) => {
+    for (let h = 0; h < 24; h++) {
+      const cell = document.createElement("div");
+      cell.className = "heatmap-cell";
+
+      // Pattern: heavier at 11pm-2am (hours 22, 23, 0, 1) and lunch (12, 13)
+      let level = 0;
+      let reelsCount = 0;
+
+      if ((h >= 22 || h <= 1) && (dIdx >= 3)) {
+        level = 4; // Critical late night weekend
+        reelsCount = Math.floor(Math.random() * 30) + 75;
+      } else if (h >= 21 || h === 2) {
+        level = 3; // High
+        reelsCount = Math.floor(Math.random() * 25) + 40;
+      } else if (h >= 12 && h <= 13) {
+        level = 2; // Lunch scroll
+        reelsCount = Math.floor(Math.random() * 15) + 20;
+      } else if (h >= 8 && h <= 20) {
+        level = Math.random() > 0.6 ? 1 : 0;
+        reelsCount = level === 1 ? Math.floor(Math.random() * 8) + 2 : 0;
+      }
+
+      cell.classList.add(`heat-level-${level}`);
+      cell.title = `${day} at ${h}:00 - ${reelsCount} reels scrolled`;
+
+      cell.addEventListener("mouseenter", () => {
+        sound.playPop();
+        const tooltip = document.getElementById("heatmap-tooltip");
+        if (tooltip) {
+          tooltip.innerText = `[${day} ${h}:00] -> ${reelsCount} Reels (${reelsCount > 60 ? 'CRITICAL BINGE' : reelsCount > 30 ? 'FATIGUE ZONE' : 'SAFE'})`;
+        }
+      });
+
+      container.appendChild(cell);
+    }
+  });
+}
+
+// ==========================================
+// 6. SIDELOADING 3-STEP GUIDE SWITCHER

@@ -354,3 +354,98 @@ function initDraggableOverlay() {
 
 // ==========================================
 // 3. INTERACTIVE 4-STAGE BRAIN DECAY SHOWCASE
+// ==========================================
+const stageData = [
+  {
+    stageNum: 1,
+    name: "Fresh Brain",
+    range: "0–29 Videos",
+    color: "#3546F5",
+    img: "images/freshBrain.png",
+    badge: "STAGE 01 // FRESH",
+    cognitiveState: "High Executive Control & Balanced Dopamine",
+    symptoms: "Sharp working memory, clear focus, zero neural fatigue. Natural impulse resistance.",
+    overlayBehavior: "Calm electric blue bubble. Non-intrusive breathing pulse. Video counter increments normally.",
+    memoryCapacity: 98,
+    focusRetention: 95,
+    executiveControl: 94
+  },
+  {
+    stageNum: 2,
+    name: "Tired Brain",
+    range: "30–59 Videos",
+    color: "#F59E0B",
+    img: "assets/brain-tired.svg",
+    badge: "STAGE 02 // TIRED",
+    cognitiveState: "Attention Drift & Micro-Fatigue",
+    symptoms: "Unconscious auto-scroll reflex activates. Working memory drops by 32%. Mild mental fog.",
+    overlayBehavior: "Turns warm amber. Mascot eyelids droop. Subtle vibration upon every 5th swipe.",
+    memoryCapacity: 68,
+    focusRetention: 64,
+    executiveControl: 60
+  },
+  {
+    stageNum: 3,
+    name: "Very Tired Brain",
+    range: "60–89 Videos",
+    color: "#F97316",
+    img: "assets/brain-very-tired.svg",
+    badge: "STAGE 03 // OVERLOAD",
+    cognitiveState: "Neural Overdrive & Dopamine Desensitization",
+    symptoms: "Severe attention fragmentation. Time blindness (you think 15 mins passed, but it was 1.5 hours).",
+    overlayBehavior: "Sunset orange alert pulse. Mascot shows stress cracks. Periodic warning nudge badge.",
+    memoryCapacity: 38,
+    focusRetention: 32,
+    executiveControl: 28
+  },
+  {
+    stageNum: 4,
+    name: "Exhausted / Rotting Brain",
+    range: "90+ Videos",
+    color: "#EF4444",
+    img: "assets/brain-rotting.svg",
+    badge: "STAGE 04 // CRITICAL ROT",
+    cognitiveState: "Acute Dopamine Depletion (Brain Rot)",
+    symptoms: "Executive dysfunction. Irritability upon closing the app. Inability to read long paragraphs.",
+    overlayBehavior: "Crimson biohazard alert. Melting pixel animation. Activates fullscreen Reality-Check Intercept.",
+    memoryCapacity: 12,
+    focusRetention: 10,
+    executiveControl: 8
+  }
+];
+
+function selectBrainStage(index) {
+  sound.playPop();
+  const data = stageData[index];
+
+  // Update tabs
+  const tabBtns = document.querySelectorAll(".stage-tab-btn");
+  tabBtns.forEach((btn, i) => {
+    btn.classList.remove("active", "active-stage-1", "active-stage-2", "active-stage-3", "active-stage-4");
+    if (i === index) {
+      btn.classList.add("active", `active-stage-${index + 1}`);
+    }
+  });
+
+  // Update display card content
+  const card = document.getElementById("stage-display-card");
+  const nameEl = document.getElementById("stage-display-name");
+  const badgeEl = document.getElementById("stage-display-badge");
+  const mascotImg = document.getElementById("stage-mascot-img");
+  const cognitiveEl = document.getElementById("stage-cognitive-val");
+  const symptomsEl = document.getElementById("stage-symptoms-val");
+  const overlayEl = document.getElementById("stage-overlay-val");
+
+  // Metric bars
+  const memBar = document.getElementById("metric-memory-bar");
+  const memVal = document.getElementById("metric-memory-val");
+  const focBar = document.getElementById("metric-focus-bar");
+  const focVal = document.getElementById("metric-focus-val");
+  const exeBar = document.getElementById("metric-exec-bar");
+  const exeVal = document.getElementById("metric-exec-val");
+
+  if (card) {
+    card.style.setProperty("--stage-accent", data.color);
+    card.style.borderColor = data.color;
+  }
+  if (nameEl) {

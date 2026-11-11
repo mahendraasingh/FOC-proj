@@ -397,5 +397,71 @@
   </section>
 
   <!-- ==========================================================================
+       5. INTERACTIVE DOPAMINE LIFETIME SAVINGS CALCULATOR
+       ========================================================================== -->
+  <section class="calculator-section" id="calculator">
+    <div class="section-header">
+      <div class="section-badge">
+        <span class="mono-chip pill-blue">TIME AUDIT ENGINE</span>
+      </div>
+      <h2 class="section-title">Calculate How Much Life You're Losing</h2>
+      <p class="section-desc">
+        Short-form video is designed to cause temporal blindness. Drag the sliders below to see the shocking reality of your scrolling habit.
+      </p>
+    </div>
+
+    <div class="calculator-card">
+      <!-- Sliders Left Column -->
+      <div class="calc-sliders-wrap">
+        <div class="calc-slider-group">
+          <div class="calc-slider-header">
+            <span>Reels & Shorts Watched Per Day:</span>
+            <span class="mono-chip pill-dark" id="calc-daily-val">80 Reels / day</span>
+          </div>
+          <input type="range" min="10" max="250" value="80" step="5" class="scrubber-slider" id="calc-daily-reels">
+          <div style="display: flex; justify-content: space-between; font-family: monospace; font-size: 0.75rem; color: #6B7280;">
+            <span>10 (Casual)</span>
+            <span>80 (Average)</span>
+            <span>250 (Extreme Binge)</span>
+          </div>
+        </div>
+
+        <div class="calc-slider-group">
+          <div class="calc-slider-header">
+            <span>Days Active Per Week:</span>
+            <span class="mono-chip pill-dark" id="calc-days-val">7 Days / week</span>
+          </div>
+          <input type="range" min="1" max="7" value="7" step="1" class="scrubber-slider" id="calc-days-week">
+          <div style="display: flex; justify-content: space-between; font-family: monospace; font-size: 0.75rem; color: #6B7280;">
+            <span>1 Day</span>
+            <span>4 Days</span>
+            <span>Every Single Day (7)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Result Stat Card Right Column -->
+      <div class="calc-result-box">
+        <div>
+          <span class="calc-stat-sub">ANNUAL CONSCIOUS TIME CONSUMED</span>
+          <div class="calc-big-stat" id="calc-hours-lost">365 hrs</div>
+          <span style="font-family: monospace; font-size: 0.95rem; color: #FCA5A5;" id="calc-days-lost">22.8 conscious waking days</span>
+        </div>
+
+        <div class="calc-equivalent-grid">
+          <div class="calc-equiv-item">
+            <span class="calc-equiv-val" id="calc-books-val">56 Books</span>
+            <span class="calc-equiv-lbl">Books You Could Have Read</span>
+          </div>
+          <div class="calc-equiv-item">
+            <span class="calc-equiv-val" style="color: #4ADE80;" id="calc-hours-saved">+237 hrs</span>
+            <span class="calc-equiv-lbl">Annual Focus Reclaimed with RotBrain</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
 </body>
 </html>

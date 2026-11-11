@@ -1,0 +1,8 @@
+# Ignore large APK and test scripts for Vercel deployment
+RotBrain.apk
+*.ps1
+images/phone-screen-clean.png
+images/phone-dashboard-screen.png
+images/phone-screen-nobg.png
+images/IMG_20261110_135108.jpg.jpeg
+

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -596,5 +596,99 @@
   </section>
 
   <!-- ==========================================================================
+       8. FINAL HIGH-CONVERTING CTA BANNER (THE ONLY DOWNLOAD BUTTON)
+       ========================================================================== -->
+  <section class="cta-banner-section" id="download">
+    <div class="cta-banner-card">
+      <span class="mono-chip pill-blue" style="border-color: #3546F5;">⚡ FREE & DIRECT DOWNLOAD</span>
+      <h2 class="cta-banner-title">
+        Reclaim Your Dopamine Today.
+      </h2>
+      <p class="cta-banner-desc">
+        Every reel you watch without awareness costs you cognitive bandwidth. Download RotBrain now, see your brain rot in real-time, and take back your life.
+      </p>
+
+      <!-- The ONLY Download Button on the Entire Page -->
+      <button class="brutalist-btn btn-primary cta-banner-btn trigger-download" id="cta-bottom-download-btn">
+        <img src="assets/android-robot.svg" alt="Android Icon" width="28" height="28" style="filter: brightness(0) invert(1);">
+        <span>Download RotBrain.apk (v1.0.1)</span>
+        <span class="download-icon-bounce">⬇</span>
+      </button>
+
+      <!-- Micro Badges -->
+      <div style="display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center;">
+        <span class="mono-chip pill-dark" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2);">Version 1.0.1</span>
+        <span class="mono-chip pill-dark" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2);">~129 MB</span>
+        <span class="mono-chip pill-dark" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2);">Direct APK Binary</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       9. FOOTER
+       ========================================================================== -->
+  <footer class="footer-wrap">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <img src="images/freshBrain.png" alt="RotBrain Logo" width="32" height="32" style="border-radius: 8px; object-fit: cover;">
+        <span>RotBrain</span>
+        <span class="mono-chip pill-dark" style="font-size: 0.7rem; padding: 0.2rem 0.5rem;">MIT Open Source</span>
+      </div>
+
+      <div class="footer-credits">
+        Crafted with obsession by <strong>Mahendra Singh</strong>.
+      </div>
+
+      <ul class="footer-links">
+        <li><a href="#preview" class="footer-link">App Preview</a></li>
+        <li><a href="#stages" class="footer-link">Brain States</a></li>
+        <li><a href="#features" class="footer-link">Features</a></li>
+        <li><a href="#install" class="footer-link">Install Guide</a></li>
+        <li><a href="#download" class="footer-link">Download</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       10. DOWNLOAD ASSISTANT MODAL
+       ========================================================================== -->
+  <div class="modal-overlay" id="download-assistant-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="close-modal-btn" aria-label="Close dialog">✕</button>
+
+      <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.2rem;">
+        <div style="width: 48px; height: 48px; border-radius: 12px; background: #3546F5; display: flex; align-items: center; justify-content: center; border: 2px solid #111111; box-shadow: 2px 2px 0px #111111; overflow: hidden;">
+          <img src="images/freshBrain.png" alt="RotBrain Logo" width="44" height="44" style="object-fit: cover;">
+        </div>
+        <div>
+          <h3 id="modal-title" style="font-size: 1.35rem; font-weight: 900; line-height: 1.1;">Download Initiated!</h3>
+          <span style="font-family: monospace; font-size: 0.8rem; color: #059669; font-weight: bold;">RotBrain-v1.0.1.apk (~129 MB)</span>
+        </div>
+      </div>
+
+      <p style="font-size: 0.95rem; color: #4B5563; line-height: 1.5; margin-bottom: 1.2rem;">
+        Your browser has begun downloading the <strong>RotBrain-v1.0.1.apk</strong> package. If the download did not start automatically, use the button below:
+      </p>
+
+      <!-- Action Button in Modal: Direct Download (.apk) -->
+      <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
+        <a href="https://drive.google.com/uc?export=download&id=1OYehgzvSZ9usMkNN5CMjFnNZg7exC0sm" download="RotBrain-v1.0.1.apk" target="_blank" class="brutalist-btn btn-primary" id="modal-direct-download-btn" style="padding: 0.85rem; font-size: 1rem; text-decoration: none;">
+          <span>Direct Download (.apk)</span>
+          <span class="download-icon-bounce">⬇</span>
+        </a>
+      </div>
+
+      <!-- Quick 3-Step Reminder -->
+      <div style="background: #F9FAFB; border: 2px solid #111111; border-radius: 8px; padding: 1rem; font-size: 0.82rem; line-height: 1.5;">
+        <strong style="display: block; margin-bottom: 0.4rem; color: #111111;">Quick Sideload Checklist:</strong>
+        <div>1. Open downloaded <code>RotBrain.apk</code> file.</div>
+        <div>2. Tap <em>Settings &gt; Allow from this source</em> when prompted.</div>
+        <div>3. Open RotBrain and enable <em>Accessibility Service</em> & <em>Overlay</em>.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Core JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>

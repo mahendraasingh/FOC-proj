@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Android Robot Head -->
+  <path d="M14 21C14 15.4772 18.4772 11 24 11C29.5228 11 34 15.4772 34 21H14Z" fill="#3DDC84"/>
+  <!-- Antennas -->
+  <line x1="17.5" y1="11.5" x2="14" y2="7.5" stroke="#3DDC84" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="30.5" y1="11.5" x2="34" y2="7.5" stroke="#3DDC84" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Eyes -->
+  <circle cx="19" cy="17" r="1.5" fill="#FFFFFF"/>
+  <circle cx="29" cy="17" r="1.5" fill="#FFFFFF"/>
+  <!-- Body -->
+  <path d="M14 23H34V35C34 36.6569 32.6569 38 31 38H17C15.3431 38 14 36.6569 14 35V23Z" fill="#3DDC84"/>
+  <!-- Left Arm -->
+  <rect x="9.5" y="23" width="3" height="11" rx="1.5" fill="#3DDC84"/>
+  <!-- Right Arm -->
+  <rect x="35.5" y="23" width="3" height="11" rx="1.5" fill="#3DDC84"/>
+  <!-- Left Leg -->
+  <rect x="18" y="38" width="3" height="7" rx="1.5" fill="#3DDC84"/>
+  <!-- Right Leg -->
+  <rect x="27" y="38" width="3" height="7" rx="1.5" fill="#3DDC84"/>
+</svg>
+

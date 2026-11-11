@@ -1,0 +1,18 @@
+﻿# Dependencies
+node_modules/
+package-lock.json
+
+# Environment and sensitive files
+.env
+.env.local
+*.log
+
+# Operating system artifacts
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build and local bundle outputs
+dist/
+build/
+*.tmp

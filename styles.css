@@ -1198,3 +1198,87 @@ body {
 .term-dim { color: #64748B; }
 
 /* ==========================================================================
+   QUICK & SIMPLE 3-STEP SIDELOADING GUIDE
+   ========================================================================== */
+.guide-section {
+  max-width: 1200px;
+  margin: 6rem auto;
+  padding: 0 1.5rem;
+}
+
+.guide-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+  margin-top: 3rem;
+}
+
+.guide-step-card {
+  background: #FFFFFF;
+  border: 2.5px solid var(--color-dark);
+  border-radius: var(--radius-md);
+  padding: 2.2rem 1.8rem;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  position: relative;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.guide-step-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.step-number-bubble {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-dark);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 900;
+  font-size: 1.2rem;
+  border: 2px solid var(--color-dark);
+  box-shadow: 2px 2px 0px var(--color-primary);
+}
+
+.step-title {
+  font-size: 1.35rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: var(--color-dark);
+}
+
+.step-desc {
+  font-size: 0.95rem;
+  color: #4B5563;
+  line-height: 1.5;
+}
+
+.step-dialog-mockup {
+  background: #F3F4F6;
+  border: 2px solid var(--color-dark);
+  border-radius: 8px;
+  padding: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.step-tip-callout {
+  background: #FFFBEB;
+  border-left: 4px solid #F59E0B;
+  padding: 0.75rem 1rem;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.85rem;
+  color: #92400E;
+}
+
+/* ==========================================================================

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Sunset Orange Warning Aura -->
+  <circle cx="100" cy="100" r="92" fill="#F97316" fill-opacity="0.2" filter="blur(8px)"/>
+
+  <!-- Outer Tactile Outline -->
+  <g filter="drop-shadow(3px 4px 0px #111111)">
+    <!-- Main Brain Shape (Heavy stress, drooping) -->
+    <path d="M60 150 C36 150 24 132 26 112 C22 98 28 84 40 74 C38 54 56 38 76 44 C88 34 112 34 124 44 C144 38 162 54 160 74 C172 84 178 98 174 112 C176 132 164 150 140 150 C130 162 115 166 100 166 C85 166 70 162 60 150 Z" 
+          fill="#F97316" stroke="#111111" stroke-width="4.5" stroke-linejoin="round"/>
+    
+    <!-- Fissure Cracks (Neural overload fracture lines) -->
+    <path d="M78 48 L86 62 L82 72 L94 80" stroke="#7C2D12" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M78 48 L86 62 L82 72 L94 80" stroke="#111111" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <path d="M136 68 L126 80 L132 92" stroke="#7C2D12" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M136 68 L126 80 L132 92" stroke="#111111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Hemisphere divide with stress distortion -->
+    <path d="M100 46 C94 70 106 100 100 162" stroke="#C2410C" stroke-width="4" stroke-linecap="round"/>
+    <path d="M100 46 C94 70 106 100 100 162" stroke="#111111" stroke-width="2.5" stroke-dasharray="4 4" stroke-linecap="round"/>
+
+    <!-- Left Hemisphere Convolutions -->
+    <path d="M46 80 C52 76 64 78 64 88 C64 100 48 102 56 116" 
+          stroke="#FB923C" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    <!-- Right Hemisphere Convolutions -->
+    <path d="M154 80 C148 76 136 78 136 88 C136 100 152 102 144 116" 
+          stroke="#FB923C" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Stressed / Twitching Eyes (Uneven, spiraling pupils) -->
+    <g class="eyes">
+      <!-- Left Eye (Twitching / Smaller) -->
+      <ellipse cx="76" cy="106" rx="12" ry="12" fill="#FFFFFF" stroke="#111111" stroke-width="3.5"/>
+      <circle cx="76" cy="106" r="4.5" fill="#EF4444"/>
+      <circle cx="76" cy="106" r="2" fill="#111111"/>
+      <!-- Eye Twitch Veins -->
+      <path d="M66 100 L70 103" stroke="#DC2626" stroke-width="1.5"/>
+      <path d="M68 112 L72 109" stroke="#DC2626" stroke-width="1.5"/>
+
+      <!-- Right Eye (Wide and Panicked) -->
+      <ellipse cx="124" cy="105" rx="15" ry="15" fill="#FFFFFF" stroke="#111111" stroke-width="3.5"/>
+      <circle cx="122" cy="105" r="7.5" fill="#111111"/>
+      <circle cx="120" cy="103" r="2.5" fill="#F97316"/>
+      <circle cx="124" cy="103" r="1.5" fill="#FFFFFF"/>
+      <path d="M136 98 L131 102" stroke="#DC2626" stroke-width="1.5"/>
+    </g>
+
+    <!-- Multiple Stress Sweat Drops -->
+    <path d="M38 95 C38 90 44 82 44 82 C44 82 50 90 50 95 C50 98 47.5 101 44 101 C40.5 101 38 98 38 95 Z" 
+          fill="#38BDF8" stroke="#111111" stroke-width="2"/>
+    <path d="M164 105 C164 101 168 95 168 95 C168 95 172 101 172 105 C172 107 170 109 168 109 C166 109 164 107 164 105 Z" 
+          fill="#38BDF8" stroke="#111111" stroke-width="1.8"/>
+
+    <!-- Grimacing / Uneven Jittery Mouth -->
+    <path d="M88 132 L94 128 L100 133 L106 128 L112 131" stroke="#111111" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+    <!-- Warning Exclamation Marks / Danger Sparks -->
+    <path d="M28 48 L32 40 L34 49 L42 51 L35 55 L37 63 L30 57 L23 61 L26 53 Z" fill="#EF4444" stroke="#111111" stroke-width="1.5"/>
+    <text x="175" y="55" fill="#EF4444" font-family="monospace" font-size="22" font-weight="900">!</text>
+  </g>
+
+  <!-- Status pill -->
+  <rect x="48" y="172" width="104" height="20" rx="10" fill="#111111" stroke="#F97316" stroke-width="1.5"/>
+  <text x="100" y="186" text-anchor="middle" fill="#FB923C" font-family="monospace" font-size="10" font-weight="bold" letter-spacing="1">OVERLOAD // 78 REELS</text>
+</svg>
+

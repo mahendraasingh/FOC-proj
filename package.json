@@ -1,0 +1,19 @@
+﻿{
+  "name": "rotbrain-landing",
+  "version": "1.0.1",
+  "description": "RotBrain — Android Digital Wellbeing App landing page with live interactive brain decay simulation",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "digital-wellbeing",
+    "doomscrolling",
+    "android",
+    "screen-time",
+    "focus"
+  ],
+  "author": "Mahendra Singh",
+  "license": "MIT"
+}

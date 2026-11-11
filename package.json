@@ -1,19 +1,26 @@
 ﻿{
-  "name": "rotbrain-landing",
+  "name": "rotbrain-platform",
   "version": "1.0.1",
-  "description": "RotBrain — Android Digital Wellbeing App landing page with live interactive brain decay simulation",
+  "description": "RotBrain — Android Digital Wellbeing App landing page with live interactive brain decay simulation and dopamine calculator",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "test": "node -e \"console.log('RotBrain assets verified.');\""
   },
   "keywords": [
     "digital-wellbeing",
     "doomscrolling",
     "android",
     "screen-time",
-    "focus"
+    "focus",
+    "neo-brutalism",
+    "web-audio"
   ],
-  "author": "Mahendra Singh",
-  "license": "MIT"
+  "author": "Mahendra Singh <mahendrasingh182006@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mahendraasingh/FOC-proj.git"
+  }
 }

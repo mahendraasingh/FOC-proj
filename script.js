@@ -610,3 +610,94 @@ function initHeatmap() {
 
 // ==========================================
 // 6. SIDELOADING 3-STEP GUIDE SWITCHER
+// ==========================================
+const sideloadSteps = [
+  {
+    step: 1,
+    title: "Download the RotBrain APK",
+    desc: "Click the download button on this page to get the official RotBrain-v1.0.1.apk file (~129 MB) directly to your Android device.",
+    mockup: `[NOTIF] Chrome: Download complete\n📁 RotBrain-v1.0.1.apk (129 MB)\nTap to start package installer`
+  },
+  {
+    step: 2,
+    title: "Allow Unknown Sources",
+    desc: "When prompted by your browser or files app, toggle 'Allow from this source'. Because RotBrain is distributed directly without Google Play gatekeeping, Android shows this standard safety check.",
+    mockup: `[SECURITY DIALOG]\n"For your security, your phone is not allowed to install unknown apps from this source."\n-> Settings -> [TOGGLE ON] Allow from this source`
+  },
+  {
+    step: 3,
+    title: "Grant Accessibility & Overlay",
+    desc: "Open RotBrain and enable: 1) Accessibility Service (to count video scrolls with zero logging) and 2) Display Over Other Apps (for the floating brain mascot).",
+    mockup: `[PERMISSIONS SETUP]\n✅ Accessibility Service: ENABLED\n✅ Display Over Other Apps: ENABLED\n[READY] Mascot will appear when Instagram or Shorts opens!`
+  }
+];
+
+function selectSideloadStep(index) {
+  sound.playPop();
+  const tabs = document.querySelectorAll(".sideload-step-btn");
+  tabs.forEach((tab, i) => {
+    if (i === index) tab.classList.add("active");
+    else tab.classList.remove("active");
+  });
+
+  const step = sideloadSteps[index];
+  const titleEl = document.getElementById("sideload-step-title");
+  const descEl = document.getElementById("sideload-step-desc");
+  const mockEl = document.getElementById("sideload-step-mock");
+
+  if (titleEl) titleEl.innerText = step.title;
+  if (descEl) descEl.innerText = step.desc;
+  if (mockEl) mockEl.innerText = step.mockup;
+}
+
+// ==========================================
+// 7. DOWNLOAD MANAGER & ASSISTANT MODAL
+// ==========================================
+const GOOGLE_DRIVE_DIRECT_URL = "https://drive.google.com/file/d/1OYehgzvSZ9usMkNN5CMjFnNZg7exC0sm/view?usp=sharing";
+const GOOGLE_DRIVE_EXPORT_DOWNLOAD = "https://drive.google.com/uc?export=download&id=1OYehgzvSZ9usMkNN5CMjFnNZg7exC0sm";
+
+function startApkDownload(e) {
+  if (e && e.preventDefault) e.preventDefault();
+  sound.playPop();
+
+  // 1. Trigger direct download from the Google Drive export link
+  const driveLink = document.createElement("a");
+  driveLink.href = GOOGLE_DRIVE_EXPORT_DOWNLOAD;
+  driveLink.target = "_blank";
+  driveLink.download = "RotBrain-v1.0.1.apk";
+  document.body.appendChild(driveLink);
+  driveLink.click();
+  document.body.removeChild(driveLink);
+
+  // 2. Also trigger local APK download fallback
+  try {
+    const localLink = document.createElement("a");
+    localLink.href = "RotBrain.apk";
+    localLink.download = "RotBrain-v1.0.1.apk";
+    document.body.appendChild(localLink);
+    localLink.click();
+    document.body.removeChild(localLink);
+  } catch (err) {}
+
+  // 3. Open the Download Assistant Modal
+  openDownloadModal();
+}
+
+function openDownloadModal() {
+  const modal = document.getElementById("download-assistant-modal");
+  if (modal) {
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+}
+
+function closeDownloadModal() {
+  const modal = document.getElementById("download-assistant-modal");
+  if (modal) {
+    modal.classList.remove("active");
+    document.body.style.overflow = "auto";
+  }
+}
+
+// ==========================================
+// 8. SCROLL TRIGGER & REVEAL ANIMATIONS

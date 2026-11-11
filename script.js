@@ -1,4 +1,4 @@
-﻿/**
+/**
  * ROTBRAIN - Modern Landing Page Interactivity
  * Features: Live Phone Simulator, 4-Stage Brain Decay Scrubber,
  * Bento Interactive Previews, Dopamine Calculator, Sound Effects, Download Manager
@@ -701,3 +701,134 @@ function closeDownloadModal() {
 
 // ==========================================
 // 8. SCROLL TRIGGER & REVEAL ANIMATIONS
+// ==========================================
+function initScrollObserver() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll(".reveal-on-scroll").forEach(el => {
+    observer.observe(el);
+  });
+
+  // Floating Corner CTA scroll reveal
+  const floatingCta = document.getElementById("floating-corner-download");
+  if (floatingCta) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 350) {
+        floatingCta.classList.add("is-visible");
+      } else {
+        floatingCta.classList.remove("is-visible");
+      }
+    }, { passive: true });
+  }
+}
+
+// ==========================================
+// 9. INITIALIZATION ON DOM READY
+// ==========================================
+document.addEventListener("DOMContentLoaded", () => {
+  // Initialize Phone Simulator
+  updateHeroPhoneUI(false);
+  initDraggableOverlay();
+
+  // Button Listeners for Phone Simulator
+  const nextReelBtn = document.getElementById("scroll-reel-btn");
+  if (nextReelBtn) nextReelBtn.addEventListener("click", () => scrollNextReel(1));
+
+  const fastBingeBtn = document.getElementById("fast-binge-btn");
+  if (fastBingeBtn) fastBingeBtn.addEventListener("click", () => scrollNextReel(25));
+
+  const resetBtn = document.getElementById("reset-simulator-btn");
+  if (resetBtn) resetBtn.addEventListener("click", resetBrainSimulator);
+
+  const autoBingeBtn = document.getElementById("auto-binge-btn");
+  if (autoBingeBtn) autoBingeBtn.addEventListener("click", toggleAutoBinge);
+
+  const dismissGuardBtn = document.getElementById("dismiss-guard-btn");
+  if (dismissGuardBtn) {
+    dismissGuardBtn.addEventListener("click", () => {
+      sound.playPop();
+      const modal = document.getElementById("hero-guard-modal");
+      if (modal) {
+        modal.classList.remove("active");
+        modal.classList.add("dismissed");
+      }
+    });
+  }
+
+  const closeGuardBtn = document.getElementById("close-app-guard-btn");
+  if (closeGuardBtn) {
+    closeGuardBtn.addEventListener("click", () => {
+      sound.playPop();
+      resetBrainSimulator();
+    });
+  }
+
+  // Stages tabs listeners
+  const tabBtns = document.querySelectorAll(".stage-tab-btn");
+  tabBtns.forEach((btn, idx) => {
+    btn.addEventListener("click", () => selectBrainStage(idx));
+  });
+
+  const scrubber = document.getElementById("stages-scrubber");
+  if (scrubber) {
+    scrubber.addEventListener("input", (e) => onScrubberChange(e.target.value));
+  }
+
+  // Calculator listeners
+  const dailyReelsInput = document.getElementById("calc-daily-reels");
+  const daysActiveInput = document.getElementById("calc-days-week");
+  if (dailyReelsInput) dailyReelsInput.addEventListener("input", updateDopamineCalc);
+  if (daysActiveInput) daysActiveInput.addEventListener("input", updateDopamineCalc);
+  updateDopamineCalc();
+
+  // Heatmap initialization
+  initHeatmap();
+
+  // Sideload steps
+  const sideloadBtns = document.querySelectorAll(".sideload-step-btn");
+  sideloadBtns.forEach((btn, idx) => {
+    btn.addEventListener("click", () => selectSideloadStep(idx));
+  });
+
+  // Sound toggle button in navbar
+  const soundBtn = document.getElementById("sound-toggle-btn");
+  if (soundBtn) {
+    soundBtn.addEventListener("click", () => {
+      const isNowOn = sound.toggle();
+      soundBtn.innerText = isNowOn ? "🔊" : "🔇";
+      soundBtn.title = isNowOn ? "Sound Effects: ON" : "Sound Effects: MUTED";
+      if (isNowOn) sound.playPop();
+    });
+  }
+
+  // Download Trigger buttons everywhere
+  const downloadTriggers = document.querySelectorAll(".trigger-download");
+  downloadTriggers.forEach(btn => {
+    btn.addEventListener("click", startApkDownload);
+  });
+
+  // Modal close buttons
+  const closeModalBtn = document.getElementById("close-modal-btn");
+  if (closeModalBtn) closeModalBtn.addEventListener("click", closeDownloadModal);
+
+  const modalOverlay = document.getElementById("download-assistant-modal");
+  if (modalOverlay) {
+    modalOverlay.addEventListener("click", (e) => {
+      if (e.target === modalOverlay) closeDownloadModal();
+    });
+  }
+
+  // Escape key to close modal
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeDownloadModal();
+  });
+
+  // Scroll triggers
+  initScrollObserver();
+});

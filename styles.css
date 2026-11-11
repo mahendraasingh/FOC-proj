@@ -1611,3 +1611,109 @@ body {
 }
 
 /* ==========================================================================
+   MARQUEE TICKER TAPE
+   ========================================================================== */
+.marquee-tape {
+  background: var(--color-dark);
+  color: #FFFFFF;
+  border-top: 2.5px solid var(--color-dark);
+  border-bottom: 2.5px solid var(--color-dark);
+  padding: 0.9rem 0;
+  overflow: hidden;
+  user-select: none;
+  display: flex;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 2rem;
+  white-space: nowrap;
+  animation: marqueeScroll 25s linear infinite;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+.marquee-tape:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.marquee-dot {
+  color: var(--color-primary);
+}
+
+/* ==========================================================================
+   COMPARISON SECTION: ROTBRAIN VS BORING TIMERS
+   ========================================================================== */
+.comparison-section {
+  max-width: 1200px;
+  margin: 6rem auto;
+  padding: 0 1.5rem;
+}
+
+.comparison-table-card {
+  background: #FFFFFF;
+  border: 3px solid var(--color-dark);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.comparison-table th, .comparison-table td {
+  padding: 1.3rem 1.6rem;
+  border-bottom: 2px solid #E5E7EB;
+}
+
+.comparison-table th {
+  background: #F9FAFB;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--color-dark);
+}
+
+.comparison-table th.col-highlight {
+  background: #EBF0FF;
+  color: var(--color-primary);
+  border-left: 2px solid var(--color-dark);
+  border-right: 2px solid var(--color-dark);
+}
+
+.comparison-table td.col-highlight {
+  background: #F8FAFF;
+  border-left: 2px solid var(--color-dark);
+  border-right: 2px solid var(--color-dark);
+  font-weight: 700;
+}
+
+.comparison-feature-name {
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--color-dark);
+}
+
+.comparison-feature-sub {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+/* ==========================================================================

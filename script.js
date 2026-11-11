@@ -517,3 +517,46 @@ function onScrubberChange(val) {
 
 // ==========================================
 // 4. DOPAMINE LIFETIME CALCULATOR
+// ==========================================
+function updateDopamineCalc() {
+  const dailyReelsInput = document.getElementById("calc-daily-reels");
+  const daysActiveInput = document.getElementById("calc-days-week");
+
+  const dailyReelsVal = document.getElementById("calc-daily-val");
+  const daysActiveVal = document.getElementById("calc-days-val");
+
+  if (!dailyReelsInput || !daysActiveInput) return;
+
+  const reels = parseInt(dailyReelsInput.value, 10);
+  const days = parseInt(daysActiveInput.value, 10);
+
+  if (dailyReelsVal) dailyReelsVal.innerText = `${reels} Reels / day`;
+  if (daysActiveVal) daysActiveVal.innerText = `${days} Days / week`;
+
+  // Assume avg 45 seconds per reel
+  const minutesPerDay = (reels * 45) / 60;
+  const hoursPerWeek = (minutesPerDay * days) / 60;
+  const hoursPerYear = Math.round(hoursPerWeek * 52);
+
+  // Conscious waking days lost (16 waking hours/day)
+  const wakingDaysLost = Math.round((hoursPerYear / 16) * 10) / 10;
+
+  // Average 6 hours to finish reading an impactful book
+  const booksEquivalent = Math.round(hoursPerYear / 6.5);
+
+  // Hours saved with RotBrain (reducing daily binge by ~65%)
+  const hoursSaved = Math.round(hoursPerYear * 0.65);
+
+  const hoursLostEl = document.getElementById("calc-hours-lost");
+  const daysLostEl = document.getElementById("calc-days-lost");
+  const booksEl = document.getElementById("calc-books-val");
+  const savedEl = document.getElementById("calc-hours-saved");
+
+  if (hoursLostEl) hoursLostEl.innerText = `${hoursPerYear.toLocaleString()} hrs`;
+  if (daysLostEl) daysLostEl.innerText = `${wakingDaysLost} conscious days`;
+  if (booksEl) booksEl.innerText = `${booksEquivalent} Books`;
+  if (savedEl) savedEl.innerText = `+${hoursSaved} hrs/year`;
+}
+
+// ==========================================
+// 5. 24-HOUR INTERACTIVE HEATMAP

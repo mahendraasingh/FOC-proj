@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Glowing Aura -->
+  <circle cx="100" cy="100" r="92" fill="#3546F5" fill-opacity="0.12" filter="blur(8px)"/>
+  
+  <!-- Outer Tactile Outline -->
+  <g filter="drop-shadow(3px 4px 0px #111111)">
+    <!-- Main Brain Shape (Fresh, Plump, Vibrant) -->
+    <path d="M60 145 C40 145 28 128 30 108 C25 95 30 80 42 70 C40 50 58 35 78 40 C90 30 110 30 122 40 C142 35 160 50 158 70 C170 80 175 95 170 108 C172 128 160 145 140 145 C130 158 115 162 100 162 C85 162 70 158 60 145 Z" 
+          fill="#3546F5" stroke="#111111" stroke-width="4.5" stroke-linejoin="round"/>
+    
+    <!-- Brain Hemisphere Divide -->
+    <path d="M100 42 C98 65 102 95 100 158" stroke="#1E2896" stroke-width="4" stroke-linecap="round"/>
+    <path d="M100 42 C98 65 102 95 100 158" stroke="#111111" stroke-width="2.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+
+    <!-- Left Hemisphere Convolutions / Folds -->
+    <path d="M48 76 C55 70 68 72 68 84 C68 96 52 98 60 112 C65 120 78 118 80 128" 
+          stroke="#5B6AF7" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M65 52 C72 60 82 58 84 70 C85 78 78 86 86 94" 
+          stroke="#7A86FA" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <path d="M42 102 C50 105 54 118 48 126" 
+          stroke="#5B6AF7" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Right Hemisphere Convolutions / Folds -->
+    <path d="M152 76 C145 70 132 72 132 84 C132 96 148 98 140 112 C135 120 122 118 120 128" 
+          stroke="#5B6AF7" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M135 52 C128 60 118 58 116 70 C115 78 122 86 114 94" 
+          stroke="#7A86FA" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <path d="M158 102 C150 105 146 118 152 126" 
+          stroke="#5B6AF7" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+
+    <!-- High-Energy Focused Eyes (White glow with sharp pupils) -->
+    <g class="eyes">
+      <!-- Left Eye -->
+      <ellipse cx="78" cy="100" rx="14" ry="16" fill="#FFFFFF" stroke="#111111" stroke-width="3.5"/>
+      <circle cx="82" cy="98" r="7.5" fill="#111111"/>
+      <circle cx="84.5" cy="95.5" r="3" fill="#FFFFFF"/>
+      <circle cx="79" cy="102" r="1.5" fill="#00F0FF"/>
+
+      <!-- Right Eye -->
+      <ellipse cx="122" cy="100" rx="14" ry="16" fill="#FFFFFF" stroke="#111111" stroke-width="3.5"/>
+      <circle cx="126" cy="98" r="7.5" fill="#111111"/>
+      <circle cx="128.5" cy="95.5" r="3" fill="#FFFFFF"/>
+      <circle cx="123" cy="102" r="1.5" fill="#00F0FF"/>
+
+      <!-- Cheerful Cheeks -->
+      <ellipse cx="64" cy="116" rx="6" ry="3.5" fill="#22D3EE" opacity="0.8"/>
+      <ellipse cx="136" cy="116" rx="6" ry="3.5" fill="#22D3EE" opacity="0.8"/>
+    </g>
+
+    <!-- Confident Smiling Mouth -->
+    <path d="M92 120 Q100 128 108 120" stroke="#111111" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Electric Focus Spark Badges -->
+    <path d="M100 24 L103 32 L111 35 L103 38 L100 46 L97 38 L89 35 L97 32 Z" fill="#22D3EE" stroke="#111111" stroke-width="1.5"/>
+    <path d="M30 60 L32 65 L37 67 L32 69 L30 74 L28 69 L23 67 L28 65 Z" fill="#FACC15" stroke="#111111" stroke-width="1.2"/>
+    <path d="M170 60 L172 65 L177 67 L172 69 L170 74 L168 69 L163 67 L168 65 Z" fill="#FACC15" stroke="#111111" stroke-width="1.2"/>
+  </g>
+
+  <!-- Monospace status tag -->
+  <rect x="52" y="172" width="96" height="20" rx="10" fill="#111111" stroke="#3546F5" stroke-width="1.5"/>
+  <text x="100" y="186" text-anchor="middle" fill="#22D3EE" font-family="monospace" font-size="10" font-weight="bold" letter-spacing="1">FRESH // 100%</text>
+</svg>
+
